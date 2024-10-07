@@ -62,4 +62,5 @@ console.log(newArr2)
 // looping for of (array)
 for (let item of newArr) {
     console.log(item);
-} 
+}
+ 
