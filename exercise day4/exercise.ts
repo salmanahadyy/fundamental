@@ -194,3 +194,18 @@ function pig(str:string) {
 }
 let str: string = "pig latin is cool"
 console.log(pig(str))
+
+
+function mixedArray(input:any[]) {
+   let arr: number = 0
+    for (let index = 0; index < input.length; index++) {
+        if (typeof input[index] == "number") {
+            arr += input[index]
+        }
+        
+    }
+    return arr
+}
+
+const mixArr: any = ["3", 1, "string", null, false, undefined, 2]
+console.log(mixedArray(mixArr))
