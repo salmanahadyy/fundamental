@@ -13,8 +13,10 @@ class Student{
 
     getAge(){
         //code
-        let difference: number = new Date().getTime()
-         return 0
+        const now = new Date()
+        const date2 = new Date(this.dob)
+        const diff = now.getTime()- date2.getTime()
+         return Math.floor(diff/(24*60*60*1000)/365)
     }
 }
 
@@ -24,17 +26,23 @@ const student3 = new Student("caca","caca@gmail.com", "1998-01-01",90)
 
 const arrStudent = [ student1,student2,student3]
 
-class Dob extends Student {
-highest=0
-lowest = 0
-average = 0
-
-constructor (highest: number, lowest: number, average: number){
-    super("","","",0)
-    this.highest = highest
-    this.lowest = lowest
-    this.average = average
+function calculate(arr:Student[]) {
+    const dataScore = arr.map((item)=>item.score).sort((a,b)=>a-b)
+    const dataAge = arr.map((item)=>item.getAge()).sort((a,b)=>a-b)
+    return {
+        score: {
+            lowest: dataScore[0],
+            highest: dataScore[dataScore.length-1],
+            average: dataScore.reduce((a,b)=> a+b) / dataScore.length
+        },
+        age: {
+            lowest: dataAge[0],
+            highest: dataAge[dataAge.length-1],
+            average: dataAge.reduce((a,b)=> a+b) / dataAge.length
+        }
 }
 }
 
-const
+
+
+console.log(calculate(arrStudent))
