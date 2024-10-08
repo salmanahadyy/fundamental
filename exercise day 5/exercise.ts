@@ -13,7 +13,7 @@ class Student{
 
     getAge(){
         //code
-        
+        let difference: number = new Date().getTime()
          return 0
     }
 }
