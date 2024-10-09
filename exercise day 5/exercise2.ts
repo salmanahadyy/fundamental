@@ -10,8 +10,8 @@ class Product{
 
 class Transaction extends Product {
 total = 0
-constructor (total:number, price:number){
-    super("laptop",price)
+constructor (total:number, qty:number){
+    super("laptop",qty)
     this.total = total
 }
 }
