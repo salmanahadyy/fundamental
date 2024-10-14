@@ -1,88 +1,88 @@
 function reverseStr(input: string){
     return input.split("").reverse().join("")
 }
-
-const letter: string = reverseStr("hallo")
-
 console.log(reverseStr("Hello World"))
-console.log(reverseStr("jakarta"))
-console.log(letter)
 
-// function expression & rest parameters
-const sum = function(a: number, b: number, ...others: number[]){
-    console.log(others)
-    return a+b
-}
+// const letter: string = reverseStr("hallo")
 
-console.log(sum(10,11,1,2,3,4)) // 10 & 11 argument
+// console.log(reverseStr("jakarta"))
+// console.log(letter)
 
-// nested function
-function getMessage (firstName: string){
-    function sayHello(){
-        return "Hello " + firstName
-    }
+// // function expression & rest parameters
+// const sum = function(a: number, b: number, ...others: number[]){
+//     console.log(others)
+//     return a+b
+// }
 
-    function welcomeMessage(){
-        return "Welcome to Purwadhika"
-    }
+// console.log(sum(10,11,1,2,3,4)) // 10 & 11 argument
 
-    return sayHello() + ", " + welcomeMessage()
-}
-console.log(getMessage("David"))
+// // nested function
+// function getMessage (firstName: string){
+//     function sayHello(){
+//         return "Hello " + firstName
+//     }
 
-// closure function
-function greeting(name: string){
-    const defaultMsg: string = "Hello "
-    return function(){
-        return defaultMsg + name
-    }
-}
+//     function welcomeMessage(){
+//         return "Welcome to Purwadhika"
+//     }
 
-const greetingDavid = greeting("david")
-console.log(greetingDavid())
+//     return sayHello() + ", " + welcomeMessage()
+// }
+// console.log(getMessage("David"))
 
-function capitalize (str: string){
-    let res: string = ""
-    for (let i = 0; i < str.length; i++){
-        if (i == 0 || str.charAt(i - 1) == " "){
-            res += str.charAt(i).toUpperCase()
-        } else {
-            res += str.charAt(i).toLowerCase()
-        }
-    }
-    return res
-}
+// // closure function
+// function greeting(name: string){
+//     const defaultMsg: string = "Hello "
+//     return function(){
+//         return defaultMsg + name
+//     }
+// }
 
-console.log(capitalize("hello world"))
+// const greetingDavid = greeting("david")
+// console.log(greetingDavid())
 
-// currying
-function multiplier (factor: number){
-    return function(num: number){
-        return factor * num
-    }
-}
+// function capitalize (str: string){
+//     let res: string = ""
+//     for (let i = 0; i < str.length; i++){
+//         if (i == 0 || str.charAt(i - 1) == " "){
+//             res += str.charAt(i).toUpperCase()
+//         } else {
+//             res += str.charAt(i).toLowerCase()
+//         }
+//     }
+//     return res
+// }
 
-const mul4 = multiplier(4)
-console.log(mul4(5)) // atau console.log(multiplier(4)(5))
+// console.log(capitalize("hello world"))
 
-// recursive function
-function countDown (fromNumber: number){
-    console.log(fromNumber)
-    let nextNumber: number = fromNumber - 1
-    if (nextNumber > 0){
-        countDown(nextNumber)
-    }
-}
-countDown(9)
+// // currying
+// function multiplier (factor: number){
+//     return function(num: number){
+//         return factor * num
+//     }
+// }
 
-// arrow function
-const square = (a: number, b: number) => a*b
-console.log(square(4,2))
+// const mul4 = multiplier(4)
+// console.log(mul4(5)) // atau console.log(multiplier(4)(5))
 
-function checkOddEven (num: number){
-    if(num % 2 == 0){
-        return "even"
-    } else {
-        return "odd"
-    }
-}
+// // recursive function
+// function countDown (fromNumber: number){
+//     console.log(fromNumber)
+//     let nextNumber: number = fromNumber - 1
+//     if (nextNumber > 0){
+//         countDown(nextNumber)
+//     }
+// }
+// countDown(9)
+
+// // arrow function
+// const square = (a: number, b: number) => a*b
+// console.log(square(4,2))
+
+// function checkOddEven (num: number){
+//     if(num % 2 == 0){
+//         return "even"
+//     } else {
+//         return "odd"
+//     }
+// }
