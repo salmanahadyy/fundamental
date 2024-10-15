@@ -1,13 +1,12 @@
 // challenge
 
 function str(kata:string) {
-    return kata.split("").join(" ")
+    return kata.split("").map((item) => item == item.toUpperCase() ? ` ${item}` : item).join("").split(" ")
 }
 
 
-const exampleStr = "helloWorld"
-const resultArray = str(exampleStr)
-console.log(resultArray)
+console.log(str("helloWorld"))
+console.log(str("johnDoeMiller"))
 
 
 function num(input:number[]) {
@@ -30,3 +29,19 @@ const input2 = [11,21,22,5,30,14]
 
 console.log(num(input))
 console.log(num(input2))
+
+
+function myFunc(str:string) {
+const letter  = str.replace(/[\s/0-9]/g, "")
+const lower = letter.replace(/[A-Z]/g,"")
+return [lower.length, letter.length-lower.length]
+}
+
+console.log(myFunc("Hello Purwadhika"))
+console.log(myFunc("B4ndung"))
+
+
+
+
+
+
