@@ -1,13 +1,6 @@
-function alphabetPlus(kata:string): number {
-    let result = 0
-    const alphabet = " ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-    for (let index = 0; index < kata.length; index++) {
-        const charIndex = alphabet.indexOf(kata[index])
-        result = result *26 + charIndex
-        
-    }
-    return result
+function majority(nums:number[]):number {
+    const sortedNums = nums.sort((a,b) => a-b)
+    return sortedNums[Math.floor(nums.length / 2)]
 }
 
-console.log(alphabetPlus("AB"))
+console.log(majority([2,2,1,1,1,2,2]))
